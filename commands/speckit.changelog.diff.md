@@ -21,12 +21,12 @@ You **MUST** consider the user input before proceeding (if not empty). The user 
 ## Prerequisites
 
 1. Confirm you are inside a git repository.
-2. Verify `.specify/` directory exists with at least `spec.md`.
+2. Resolve the active feature by running `.specify/scripts/bash/check-prerequisites.sh --json` from the repo root and parsing `FEATURE_DIR` and `AVAILABLE_DOCS`. The spec artifacts live in `$FEATURE_DIR/` (under `specs/<feature>/`), not under `.specify/`.
 3. Identify the two versions to compare:
    - If two refs specified: use those directly
    - If one ref specified: compare that ref against current HEAD
    - If no ref: compare current against the most recent commit of spec.md
-4. Read both versions of spec.md using `git show <ref>:.specify/spec.md`.
+4. Read both versions of spec.md using `git show <ref>:$FEATURE_DIR/spec.md`.
 
 ## Outline
 
